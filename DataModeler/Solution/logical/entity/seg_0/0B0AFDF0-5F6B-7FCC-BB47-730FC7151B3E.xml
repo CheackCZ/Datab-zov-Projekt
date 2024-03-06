@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0B0AFDF0-5F6B-7FCC-BB47-730FC7151B3E" name="Objednavka">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:42:52 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Order Number" id="4724D96F-6B3C-66E6-D877-19D54633F5F8">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>C3D9EA67-D1A5-A30A-A2FF-60B6454F0932</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Order Price" id="2DFD43E6-3805-BDEC-0BB8-A3E85EC7A2E1">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>0E95E88B-F66C-05CA-A23A-822A3AC9E4DE</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Date" id="ECF2136D-4CCA-240B-AC7C-0F2F91D36F2B">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>BBF52FD4-03B8-FFB7-161F-E6E39C41C145</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Customer User ID" id="29F62B22-FF3D-89D1-6C5F-0AF5622ED1A4">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:28:54 UTC</createdTime>
+<generatorID>D559E13A-CE9F-1C78-D19E-2C7E572A1E71</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

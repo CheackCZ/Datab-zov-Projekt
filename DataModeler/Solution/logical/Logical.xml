@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="0A8A38AC-EFFE-F542-BB9F-1923F1DD59FB" mainViewID="BA820243-2AD3-EF33-91A6-72DB22BBC184">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:40:09 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

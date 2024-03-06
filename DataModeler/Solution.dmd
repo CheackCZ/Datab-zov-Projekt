@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Solution" id="AA4CC51D-D909-646A-1F84-D8FFD1A4B301" version="3.5">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:40:09 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>AA4CC51D-D909-646A-1F84-D8FFD1A4B301</designId>
+</OSDM_Design>

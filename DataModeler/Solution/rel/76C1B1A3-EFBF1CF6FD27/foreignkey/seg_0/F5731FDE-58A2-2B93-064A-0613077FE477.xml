@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F5731FDE-58A2-2B93-064A-0613077FE477" containerWithKeyObject="12E1EF4A-BFAE-2971-2B22-F4C452FF2120" localFKIndex="58040756-1F49-74D6-08C6-30DAC4C9C990" name="Objednavka_Payment_FK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>D38C2A94-3ACF-B55B-81C4-C72692EFEDAE</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<referredTableLongName>Payment</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DE59E9B6-E4E8-E5C2-BEB6-0ED19B069EC2</referredTableID>
+<keyObject>C3E0B719-5694-8247-671C-C2056906738B</keyObject>
+<referredKeyID>C3E0B719-5694-8247-671C-C2056906738B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

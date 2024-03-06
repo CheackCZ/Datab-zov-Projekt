@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="59E26C06-9830-9EC8-38D6-F732EEBAC805" name="Item">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:40:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="A2D0376F-4F55-CF24-0C0B-85052A12161B">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>3791CFD1-258E-4DA4-F457-1B3BB174BB5F</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Quantity" id="D2367DE9-314D-6C0C-598A-4558C7795BF4">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>1D334D75-1B22-DEF3-5B5F-CD73244B2A46</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Price of Item" id="44CABA83-495E-1860-A52F-A3EE72B302C0">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>33A17FF8-3424-C83E-B4D9-5CDD836CC378</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="718BCA3F-BE56-8CDB-3A82-23142281C9C7" name="Item PK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>1D546FC3-C143-5040-2CA0-BAD49969D355</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A2D0376F-4F55-CF24-0C0B-85052A12161B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

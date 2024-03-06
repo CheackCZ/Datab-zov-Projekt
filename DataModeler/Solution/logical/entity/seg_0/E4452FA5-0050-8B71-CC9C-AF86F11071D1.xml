@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4452FA5-0050-8B71-CC9C-AF86F11071D1" name="Typ">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:40:59 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Typ" id="CAB1CCAF-4C27-4C03-1CDC-FE86DA0AB239">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>64F8C8F0-E2B3-4240-5D71-1444543BBA9A</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Template Typ FK" directorySegmentName="seg_0" id="B638B523-809C-EF94-43BB-BF3F4632F5DD">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:25 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E4452FA5-0050-8B71-CC9C-AF86F11071D1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A0785D75-C9C1-6F98-BB4C-EB190B426CA1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

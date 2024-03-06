@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3BB5B30-4D93-96B7-392E-CB585DA6442A" name="Template">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>A0785D75-C9C1-6F98-BB4C-EB190B426CA1</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="0F335EB9-395E-E490-62DD-BEB965094148">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Type_ID" id="9AB71309-7C6B-07DA-F376-289B217DAF9D">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FF49BAD2-9C2A-F34E-1A8B-5C06EE5F7B38" referredColumn="57891097-DEBE-FC23-2B4B-E4F43F10AAF6"/>
+</associations>
+</Column>
+<Column name="Author_ID" id="FCA22AAD-9863-A076-FADC-052B63F4E927">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D2D7B6C8-3CFB-BB44-0E6C-12F0B750706F" referredColumn="12712DF1-CBAE-40C0-5396-6E25DDD6EF18"/>
+</associations>
+</Column>
+<Column name="Name" id="91CD4B4E-6571-342E-F3D4-32F892FDBD30">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:49:15 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Priced" id="A8F47BF2-63A7-93FA-4F15-0E8B73D3BDA4">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:49:15 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Price" id="E08EB9F0-EA8C-D127-1475-B90C7AA45591">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:49:15 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="45F6BFFC-C3F7-DE47-2C5D-45D4803AB8C2" name="Template_PK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="0F335EB9-395E-E490-62DD-BEB965094148"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C06ED95-2DF0-2376-465C-D78F350FF63C" name="Template_Typ_FK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>B638B523-809C-EF94-43BB-BF3F4632F5DD</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AB71309-7C6B-07DA-F376-289B217DAF9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="987F1454-3FF9-2DBE-01B1-9120C3768F06" name="Template_Author_FK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>E9F6F5B3-F15E-8733-7932-CAA4FFADC94D</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCA22AAD-9863-A076-FADC-052B63F4E927"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

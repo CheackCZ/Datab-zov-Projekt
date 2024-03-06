@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE59E9B6-E4E8-E5C2-BEB6-0ED19B069EC2" name="Payment">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>FF04FF7A-BB89-B3D7-F8C8-384E386555FD</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="DDC15246-6F13-7A1F-68B5-3303BD0E13AC">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Credit_Card_ID" id="8A09CDBB-EB59-9C93-36BA-EC23CCE4D8E8">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32CA1553-0E97-B6F3-203C-8B047560F32A" referredColumn="476A80B5-EF1D-444A-DBA3-1E24824516E5"/>
+</associations>
+</Column>
+<Column name="Bank_Transfer_ID" id="7587485A-F5A4-5CCA-72C2-792D65EE9C7C">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86D8E02B-9207-066B-A43C-472E109BF518" referredColumn="B4D6FF7B-9715-4BF0-A198-39D4478C79D1"/>
+</associations>
+</Column>
+<Column name="Description" id="8DEC5C98-343E-7D33-8339-D6B7E4CF815C">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:46:14 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3E0B719-5694-8247-671C-C2056906738B" name="Payment_PK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="DDC15246-6F13-7A1F-68B5-3303BD0E13AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7739D8E-3BB5-9279-8445-EAA835785262" name="Payment_Credit_Card_FK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>06191BA8-32C0-A065-D88E-24FE56B65A95</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A09CDBB-EB59-9C93-36BA-EC23CCE4D8E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EFB3AD49-78FB-B46C-00BC-21D146D9F243" name="Payment_Bank_Transfer_FK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>A3C2E579-CA1F-3A83-00E1-08AC74B2B700</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7587485A-F5A4-5CCA-72C2-792D65EE9C7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

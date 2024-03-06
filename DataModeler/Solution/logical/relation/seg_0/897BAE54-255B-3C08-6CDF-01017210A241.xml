@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Item Objednavka FK" directorySegmentName="seg_0" id="897BAE54-255B-3C08-6CDF-01017210A241">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:12 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0B0AFDF0-5F6B-7FCC-BB47-730FC7151B3E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>59E26C06-9830-9EC8-38D6-F732EEBAC805</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

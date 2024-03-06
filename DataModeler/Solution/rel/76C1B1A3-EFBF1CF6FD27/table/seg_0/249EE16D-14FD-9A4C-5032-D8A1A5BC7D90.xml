@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="249EE16D-14FD-9A4C-5032-D8A1A5BC7D90" name="Customer">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<generatorID>4C99A4EC-CB63-AC5B-DD5F-D479A4DF4AC1</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="BAC9C076-48DF-AD4E-ED8A-366E777A1213">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="Name" id="6410B066-731D-CA9F-25C5-7F9DE909FFBF">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:44:07 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LastName" id="B35C4BFE-6FAB-689D-672A-E4F48436705B">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:44:22 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Email" id="5A47611D-04E4-32D4-E0CF-ED82EE21E8C9">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:44:34 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Phone" id="C028FE46-A23A-0A02-06E6-768F45B67016">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:44:43 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Password" id="CD3F557E-E546-3AF3-1D18-4AF218E25F10">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:20:08 UTC</createdTime>
+<generatorID>CFDC4E4E-BF13-EF4C-832C-5023CF5E1E39</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1A8D6CD1-2364-90FB-0EA5-276362ADA868" name="Customer_PK">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:20:08 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="BAC9C076-48DF-AD4E-ED8A-366E777A1213"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E929190-3F34-4321-8C00-BBC83930284D" name="Customer_PKv1">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:49 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="BAC9C076-48DF-AD4E-ED8A-366E777A1213"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

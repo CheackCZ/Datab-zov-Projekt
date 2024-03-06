@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="69710202-74B9-F736-B2D1-283581E3955C" name="Credit Card">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:41:17 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Card Number" id="77166241-163C-B1DB-AD7F-8CBD5F593DCE">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>1D5FDC12-2DFC-21D8-CBC9-431A263FD0D2</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>16,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Expiration Date" id="E11C4BED-6EC5-E75A-C172-C79AB40EF346">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>649EE5F0-7115-1D96-AE11-81EAB29F2C5A</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CVV" id="D5079251-2F2D-ACA9-E3E0-03F57822A59C">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 16:14:18 UTC</createdTime>
+<generatorID>953EB2CE-2BF2-B898-08B0-239845B37180</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

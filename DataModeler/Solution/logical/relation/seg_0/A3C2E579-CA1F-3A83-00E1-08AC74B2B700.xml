@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Payment Bank Transfer FK" directorySegmentName="seg_0" id="A3C2E579-CA1F-3A83-00E1-08AC74B2B700">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-06 15:43:34 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<arc>7A89AE03-ED47-2A81-AEA4-0975404B011A</arc>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9CA0A3A5-405C-05BC-DCDA-C55FF1D165A6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FF04FF7A-BB89-B3D7-F8C8-384E386555FD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
