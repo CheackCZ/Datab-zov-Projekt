@@ -6,14 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject.Controllers
 {
+    // <summary>
+    /// Controller for managing bank transfers.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class Bank_TransfersController : ControllerBase
     {
         private readonly DataContext _context;
 
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
         public Bank_TransfersController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all bank transfers.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Bank_Transfer>>> GetAllBank_Transfers()
         {
@@ -21,7 +31,10 @@ namespace DatabazovyProject.Controllers
             return Ok(bank_Transfers);
         }
 
-
+        /// <summary>
+        /// Retrieves a bank transfer by ID.
+        /// </summary>
+        /// <param name="id">The ID of the bank transfer to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Bank_Transfer>> GetBank_TransferByID(int id)
         {
@@ -32,6 +45,10 @@ namespace DatabazovyProject.Controllers
             return Ok(bank_Transfer);
         }
 
+        /// <summary>
+        /// Adds a new bank transfer.
+        /// </summary>
+        /// <param name="bank_Transfer">The bank transfer to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Bank_Transfer>>> AddBankTransfer([FromBody] Bank_Transfer bank_Transfer)
         {
@@ -46,7 +63,11 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Bank_Transfers.ToListAsync());
         }
 
-
+        /// <summary>
+        /// Updates an existing bank transfer.
+        /// </summary>
+        /// <param name="updatedBankTransfer">The updated bank transfer information.</param>
+        [HttpPut]
         [HttpPut]
         public async Task<ActionResult<List<Bank_Transfer>>> UpdateBankTransfer(Bank_Transfer updatedBankTransfer)
         {
@@ -62,6 +83,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Bank_Transfers.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes a bank transfer.
+        /// </summary>
+        /// <param name="id">The ID of the bank transfer to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Bank_Transfer>>> DeleteBankTransfer(int id)
         {

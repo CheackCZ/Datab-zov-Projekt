@@ -7,17 +7,24 @@ using System.Threading.Tasks;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing authors.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class AuthorsController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public AuthorsController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public AuthorsController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all authors.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Author>>> GetAllAuthors()
         {
@@ -25,7 +32,10 @@ namespace DatabazovyProject.Controllers
             return Ok(authors);
         }
 
-
+        /// <summary>
+        /// Retrieves an author by ID.
+        /// </summary>
+        /// <param name="id">The ID of the author to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Author>> GetAuthorByID(int id)
         {
@@ -36,6 +46,10 @@ namespace DatabazovyProject.Controllers
             return Ok(author);
         }
 
+        /// <summary>
+        /// Adds a new author.
+        /// </summary>
+        /// <param name="author">The author to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Author>>> AddAuthor([FromBody]Author author)
         {
@@ -45,6 +59,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Authors.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing author.
+        /// </summary>
+        /// <param name="updatedAuthor">The updated author information.</param>
         [HttpPut]
         public async Task<ActionResult<List<Author>>> UpdateAuthor(Author updatedAuthor)
         {
@@ -62,6 +80,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Authors.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes an author.
+        /// </summary>
+        /// <param name="id">The ID of the author to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Author>>> DeleteAuthor(int id)
         {

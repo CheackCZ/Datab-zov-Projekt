@@ -6,17 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing orders.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public OrdersController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public OrdersController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all orders.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Order>>> GetAllOrders()
         {
@@ -24,7 +31,10 @@ namespace DatabazovyProject.Controllers
             return Ok(orders);
         }
 
-
+        /// <summary>
+        /// Retrieves an order by ID.
+        /// </summary>
+        /// <param name="id">The ID of the order to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrderByID(int id)
         {
@@ -35,7 +45,10 @@ namespace DatabazovyProject.Controllers
             return Ok(order);
         }
 
-
+        /// <summary>
+        /// Adds a new order.
+        /// </summary>
+        /// <param name="order">The order to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Order>>> AddOrder([FromBody] Order order)
         {
@@ -45,6 +58,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Orders.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing order.
+        /// </summary>
+        /// <param name="updatedOrder">The updated order information.</param>
         [HttpPut]
         public async Task<ActionResult<List<Order>>> UpdateOrder(Order updatedOrder)
         {
@@ -63,6 +80,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Orders.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes an order.
+        /// </summary>
+        /// <param name="id">The ID of the order to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Order>>> DeleteOrder(int id)
         {

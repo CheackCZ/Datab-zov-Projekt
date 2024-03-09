@@ -7,17 +7,24 @@ using System;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing types.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class TypesController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public TypesController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public TypesController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all types.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<DatabazovyProjekt.Type>>> GetAllTypes()
         {
@@ -25,6 +32,10 @@ namespace DatabazovyProject.Controllers
             return Ok(types);
         }
 
+        /// <summary>
+        /// Retrieves a type by ID.
+        /// </summary>
+        /// <param name="id">The ID of the type to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<DatabazovyProjekt.Type>> GetTypById(int id)
         {
@@ -35,6 +46,10 @@ namespace DatabazovyProject.Controllers
             return Ok(typ);
         }
 
+        /// <summary>
+        /// Adds a new type.
+        /// </summary>
+        /// <param name="typ">The type to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<DatabazovyProjekt.Type>>> AddTyp([FromBody] DatabazovyProjekt.Type typ)
         {
@@ -44,6 +59,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Types.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing type.
+        /// </summary>
+        /// <param name="updatedTyp">The updated type information.</param>
         [HttpPut]
         public async Task<ActionResult<List<DatabazovyProjekt.Type>>> UpdateTyp(DatabazovyProjekt.Type updatedTyp)
         {
@@ -57,6 +76,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Types.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes a type.
+        /// </summary>
+        /// <param name="id">The ID of the type to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<DatabazovyProjekt.Type>>> DeleteTyp(int id)
         {
@@ -69,6 +92,5 @@ namespace DatabazovyProject.Controllers
 
             return Ok(await _context.Types.ToListAsync());
         }
-
     }
 }

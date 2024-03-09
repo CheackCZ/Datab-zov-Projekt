@@ -6,17 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing payments.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class PaymentsController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public PaymentsController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public PaymentsController(DataContext context) { _context = context; }
 
+        // <summary>
+        /// Retrieves all payments.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Payment>>> GetAllPayments()
         {
@@ -24,7 +31,10 @@ namespace DatabazovyProject.Controllers
             return Ok(payments);
         }
 
-
+        /// <summary>
+        /// Retrieves a payment by ID.
+        /// </summary>
+        /// <param name="id">The ID of the payment to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Payment>> GetPaymentByID(int id)
         {
@@ -44,7 +54,10 @@ namespace DatabazovyProject.Controllers
             return Ok(payment);
         }
 
-
+        /// <summary>
+        /// Adds a new payment.
+        /// </summary>
+        /// <param name="payment">The payment to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Payment>>> AddPayment([FromBody] Payment payment)
         {
@@ -54,6 +67,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Payments.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing payment.
+        /// </summary>
+        /// <param name="updatedPayment">The updated payment information.</param>
         [HttpPut]
         public async Task<ActionResult<List<Payment>>> UpdatePayment(Payment updatedPayment)
         {
@@ -70,6 +87,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Payments.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes a payment.
+        /// </summary>
+        /// <param name="id">The ID of the payment to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Payment>>> DeletePayment(int id)
         {

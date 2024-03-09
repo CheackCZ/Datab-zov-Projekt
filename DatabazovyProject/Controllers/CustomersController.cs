@@ -6,17 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing customers.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public CustomersController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public CustomersController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all customers.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Customer>>> GetAllCustomers()
         {
@@ -24,7 +31,10 @@ namespace DatabazovyProject.Controllers
             return Ok(customers);
         }
 
-
+        /// <summary>
+        /// Retrieves a customer by ID.
+        /// </summary>
+        /// <param name="id">The ID of the customer to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomerByID(int id)
         {
@@ -35,6 +45,10 @@ namespace DatabazovyProject.Controllers
             return Ok(customer);
         }
 
+        /// <summary>
+        /// Adds a new customer.
+        /// </summary>
+        /// <param name="customer">The customer to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Customer>>> AddCustomer([FromBody] Customer customer)
         {
@@ -44,6 +58,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Customers.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing customer.
+        /// </summary>
+        /// <param name="updatedCustomer">The updated customer information.</param>
         [HttpPut]
         public async Task<ActionResult<List<Customer>>> UpdateCustomer(Customer updatedCustomer)
         {
@@ -62,6 +80,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Customers.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes a customer.
+        /// </summary>
+        /// <param name="id">The ID of the customer to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Customer>>> DeleteCustomer(int id)
         {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DatabazovyProjekt
 {
+    /// <summary>
+    /// Represents an author entity, containing information about an author.
+    /// </summary>
     public class Author
     {
        // public List<Template> templates { get; set; }
@@ -15,6 +18,14 @@ namespace DatabazovyProjekt
         public string Email { get; set; }
         public string Portfolio { get; set; }
 
+        /// <summary>
+        /// Constructor of this class with the specified parameters.
+        /// </summary>
+        /// <param name="iD">The unique identifier for the author.</param>
+        /// <param name="name">The first name of the author.</param>
+        /// <param name="lastName">The last name of the author.</param>
+        /// <param name="email">The email address of the author.</param>
+        /// <param name="portfolio">The portfolio reference of the author.</param>
         public Author(int iD, string name, string lastName, string email, string portfolio)
         {
             ID = iD;
@@ -24,7 +35,15 @@ namespace DatabazovyProjekt
             Portfolio = portfolio;
         }
 
+        /// <summary>
+        /// Empty constructor of this class.
+        /// </summary>
         public Author() { }
+
+        /// <summary>
+        /// Returns a string representation of the author.
+        /// </summary>
+        /// <returns>A string containing the author's ID, name, last name, email, and portfolio reference.</returns>
 
         public override string? ToString()
         {

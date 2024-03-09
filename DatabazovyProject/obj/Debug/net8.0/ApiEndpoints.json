@@ -1001,7 +1001,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Typ, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Type, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1021,13 +1021,13 @@
     "Parameters": [
       {
         "Name": "typ",
-        "Type": "DatabazovyProjekt.Typ",
+        "Type": "DatabazovyProjekt.Type",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Typ, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Type, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1047,13 +1047,13 @@
     "Parameters": [
       {
         "Name": "updatedTyp",
-        "Type": "DatabazovyProjekt.Typ",
+        "Type": "DatabazovyProjekt.Type",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Typ, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Type, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1079,7 +1079,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Typ, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[DatabazovyProjekt.Type, DatabazovyProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1105,7 +1105,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DatabazovyProjekt.Typ",
+        "Type": "DatabazovyProjekt.Type",
         "MediaTypes": [
           "text/plain",
           "application/json",

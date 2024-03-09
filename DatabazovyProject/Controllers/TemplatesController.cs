@@ -6,17 +6,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject.Controllers
 {
+    /// <summary>
+    /// Controller for managing templates.
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class TemplatesController : ControllerBase
     {
         private readonly DataContext _context;
 
-        public TemplatesController(DataContext context)
-        {
-            _context = context;
-        }
+        /// <summary>
+        /// Initializes a new instance of this> class.
+        /// </summary>
+        /// <param name="context">The data context.</param>
+        public TemplatesController(DataContext context) { _context = context; }
 
+        /// <summary>
+        /// Retrieves all templates.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<List<Template>>> GetAllTemplates()
         {
@@ -24,7 +31,10 @@ namespace DatabazovyProject.Controllers
             return Ok(templates);
         }
 
-
+        /// <summary>
+        /// Retrieves a template by ID.
+        /// </summary>
+        /// <param name="id">The ID of the template to retrieve.</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Template>> GetTemplateByID(int id)
         {
@@ -35,6 +45,10 @@ namespace DatabazovyProject.Controllers
             return Ok(template);
         }
 
+        /// <summary>
+        /// Adds a new template.
+        /// </summary>
+        /// <param name="template">The template to add.</param>
         [HttpPost]
         public async Task<ActionResult<List<Template>>> AddTemplate([FromBody] Template template)
         {
@@ -44,6 +58,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Templates.ToListAsync());
         }
 
+        /// <summary>
+        /// Updates an existing template.
+        /// </summary>
+        /// <param name="updatedTemplate">The updated template information.</param>
         [HttpPut]
         public async Task<ActionResult<List<Template>>> UpdateTemplate(Template updatedTemplate)
         {
@@ -52,7 +70,7 @@ namespace DatabazovyProject.Controllers
                 return NotFound("Template Not Found!");
 
             dbTemplate.Author_id = updatedTemplate.Author_id;
-            dbTemplate.Typ_id = updatedTemplate.Typ_id;
+            dbTemplate.Type_id = updatedTemplate.Type_id;
             dbTemplate.Name = updatedTemplate.Name;
             dbTemplate.Priced = updatedTemplate.Priced;
             dbTemplate.Price = updatedTemplate.Price;
@@ -62,6 +80,10 @@ namespace DatabazovyProject.Controllers
             return Ok(await _context.Templates.ToListAsync());
         }
 
+        /// <summary>
+        /// Deletes a template.
+        /// </summary>
+        /// <param name="id">The ID of the template to delete.</param>
         [HttpDelete]
         public async Task<ActionResult<List<Template>>> DeleteTemplate(int id)
         {
