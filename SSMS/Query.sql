@@ -1,72 +1,72 @@
-CREATE TABLE author (
-    id       int primary key not null identity(1,1),
-    name     VARCHAR(20) not null,
-    lastname VARCHAR(20) not null,
-    email    VARCHAR(30) unique not null
+CREATE TABLE Authors (
+    id        int primary key not null identity(1,1),
+    name      VARCHAR(20) not null,
+    lastname  VARCHAR(20) not null,
+    email     VARCHAR(30) unique not null,
+	portfolio Varchar(50) unique not null
 );
-ALTER TABLE author ADD portfolio Varchar(50) unique not null;
 
-CREATE TABLE bank_transfer (
+CREATE TABLE Bank_Transfers (
     id              int primary key not null identity(1,1),
     variable_symbol VARCHAR(10) not null,
     iban            VARCHAR(34) unique not null
 );
 
-CREATE TABLE credit_card (
+CREATE TABLE Credit_Cards (
     id				int primary key not null identity(1,1),
     card_number     VARCHAR(16) unique NOT NULL,
-    expiration_date DATE NOT NULL,
+    expiration_date DATETIME NOT NULL,
     cvv             VARCHAR(3) NOT NULL
 );
 
-CREATE TABLE customer (
+CREATE TABLE Customers (
     id		 int primary key not null identity(1,1),
     name     VARCHAR(20) not null,
     lastname VARCHAR(20) not null,
     email    VARCHAR(30) unique not null,
-    phone    VARCHAR(12) not null
+    phone    VARCHAR(12) not null,
+	password VARCHAR(60) not null
 );
-ALTER TABLE author ADD Heslo Varchar(32) unique not null;
 
-CREATE TABLE item (
+CREATE TABLE Items (
     id			  int primary key not null identity(1,1),
-    orders_id     int not null foreign key references objednavka(id),
-    template_id   int not null foreign key references template(id),
+    orders_id     int not null foreign key references Orders(id),
+    template_id   int not null foreign key references Templates(id),
     quantity      int not null,
     price_of_item float not null
 );
 
-CREATE TABLE objednavka (
+CREATE TABLE Orders (
     id			 int primary key not null identity(1,1),
-    customer_id  int not null foreign key references customer(id),
-    payment_id   int not null foreign key references payment(id),
+    customer_id  int not null foreign key references Customers(id),
+    payment_id   int not null foreign key references Payments(id),
     order_number int unique not null,
-    "Date"       DATE not null,
+    "Date"       DATETIME not null,
     order_price  float not null
 );
 
-CREATE TABLE payment (
+CREATE TABLE Payments (
     id				 int primary key not null identity(1,1),
-    bank_transfer_id int not null foreign key references bank_transfer(id),
-    credit_card_id   int not null foreign key references credit_card(id),
-    description      VARCHAR(50) not null,
+    bank_transfer_id int foreign key references Bank_Transfers(id),
+    credit_card_id   int foreign key references Credit_Cards(id),
+    description      VARCHAR(50),
 	CHECK ( 
-		( ( bank_transfer_id IS NOT NULL ) AND ( credit_card_id IS NULL ) )
-        OR 
-		( ( credit_card_id IS NOT NULL ) AND ( bank_transfer_id IS NULL ) ) )
+			( ( bank_transfer_id IS NOT NULL ) AND ( credit_card_id IS NULL ) )
+			OR 
+			( ( credit_card_id IS NOT NULL ) AND ( bank_transfer_id IS NULL ) )
+		  )
 );
 
-CREATE TABLE template (
+CREATE TABLE Templates (
     id		  int primary key not null identity(1,1),
-    author_id int not null foreign key references author(id),
-    typ_id    int not null foreign key references typ(id),
+    author_id int not null foreign key references Authors(id),
+    typ_id    int not null foreign key references Types(id),
     name      VARCHAR(30) not null,
-    priced    CHAR(1) not null,
-    float     int not null
+    priced    bit not null,
+    price     float
 );
-alter table template alter column float int price float;
 
-CREATE TABLE typ (
+CREATE TABLE Types (
     id	 int primary key not null identity(1,1),
-    type  VARCHAR(20) not null
+    nazev  VARCHAR(20) not null
 ); 
