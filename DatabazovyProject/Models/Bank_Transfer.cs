@@ -8,7 +8,7 @@ namespace DatabazovyProjekt
 {
     public class Bank_Transfer
     {
-        public List<Payment> payments;
+        // public List<Payment> payments;
 
         public int ID { get; set; }
         public string Variable_Symbol { get; set; }

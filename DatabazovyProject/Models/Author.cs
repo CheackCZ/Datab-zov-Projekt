@@ -8,8 +8,7 @@ namespace DatabazovyProjekt
 {
     public class Author
     {
-        public List<Template> templates { get; set; }
-
+       // public List<Template> templates { get; set; }
         public int ID { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -24,6 +23,8 @@ namespace DatabazovyProjekt
             Email = email;
             Portfolio = portfolio;
         }
+
+        public Author() { }
 
         public override string? ToString()
         {

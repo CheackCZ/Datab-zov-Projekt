@@ -8,7 +8,7 @@ namespace DatabazovyProjekt
 {
     public class Customer
     {
-        public List<Objednavka> objednavky;
+        //public List<Objednavka> objednavky;
 
         public int ID { get; set; }
         public string Name { get; set; }
@@ -27,9 +27,13 @@ namespace DatabazovyProjekt
             Password = password;
         }
 
+        public Customer()
+        {
+        }
+
         public override string? ToString()
         {
-            return $"{ID} | {Name} {LastName} | Contact: {email}, {phone} | {Password}";
+            return $"{ID} | {Name} {LastName} | Contact: {Email}, {Phone} | {Password}";
         }
     }
 }
