@@ -55,6 +55,7 @@
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:46:14 UTC</createdTime>
 <ownerDesignName>Solution</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

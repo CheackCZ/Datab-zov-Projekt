@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4452FA5-0050-8B71-CC9C-AF86F11071D1" name="Typ">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4452FA5-0050-8B71-CC9C-AF86F11071D1" name="Type">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:40:59 UTC</createdTime>
 <ownerDesignName>Solution</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="Typ" id="CAB1CCAF-4C27-4C03-1CDC-FE86DA0AB239">
+<Attribute name="Nazev" id="CAB1CCAF-4C27-4C03-1CDC-FE86DA0AB239">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 16:14:18 UTC</createdTime>
 <generatorID>64F8C8F0-E2B3-4240-5D71-1444543BBA9A</generatorID>

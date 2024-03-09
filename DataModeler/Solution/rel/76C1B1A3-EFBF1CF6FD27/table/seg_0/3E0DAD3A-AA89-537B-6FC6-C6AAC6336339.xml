@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Objednavka_ID" id="BF3144D1-D766-1AE1-ACBE-D091599190F7">
+<Column name="Order_ID" id="BF3144D1-D766-1AE1-ACBE-D091599190F7">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <ownerDesignName>Solution</ownerDesignName>
