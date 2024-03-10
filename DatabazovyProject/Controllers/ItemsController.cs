@@ -3,6 +3,7 @@ using DatabazovyProjekt;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace DatabazovyProject.Controllers
 {
@@ -52,10 +53,28 @@ namespace DatabazovyProject.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Item>>> AddItem([FromBody] Item item)
         {
+            //ID specification condition
+            if (item.ID == 0)
+                return BadRequest("You have to specify the item's ID!");
+
+            //Checking for ID usage
+            var items = _context.Items.ToList();
+            foreach (Item it in items)
+            {
+                if (item.ID == it.ID)
+                    return BadRequest("This ID is already in use!\n -> Use differrent ID.");
+            }
+
+            var result = ValidateItem(item);
+            if (result != null)
+            {
+                return result;
+            }
+
             _context.Items.Add(item);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Items.ToListAsync());
+            return Ok($"Item ({item.ID}) added successfully:\n" + item);
         }
 
         /// <summary>
@@ -70,13 +89,13 @@ namespace DatabazovyProject.Controllers
                 return NotFound("Item Not Found!");
 
             dbItem.Template_id = updatedItem.Template_id;
-            dbItem.Order_id = updatedItem.Order_id;
+            dbItem.Orders_id = updatedItem.Orders_id;
             dbItem.Quantity = updatedItem.Quantity;
             dbItem.Price_of_Item = updatedItem.Price_of_Item;
 
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Items.ToListAsync());
+            return Ok($"Item ({dbItem.ID}) updated successfully:\n" + updatedItem);
         }
 
         /// <summary>
@@ -93,7 +112,49 @@ namespace DatabazovyProject.Controllers
             _context.Items.Remove(dbItem);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Items.ToListAsync());
+            return Ok($"Item ({dbItem.ID}) deleted successfully:\n" + dbItem);
         }
+
+        /// <summary>
+        /// Validates an item entity.
+        /// </summary>
+        /// <param name="item">The item entity to be validated.</param>
+        /// <returns>
+        /// An <see cref="ActionResult"/> indicating the result of the validation:
+        /// - <see cref="BadRequestObjectResult"/> with a message if the provided template ID or order ID does not exist in the database,
+        /// - <see langword="null"/> if the item entity is valid.
+        /// </returns>
+        private ActionResult ValidateItem(Item item)
+        {
+            //Checks the FK exists
+            var templateIDs = _context.Templates.Select(template => template.ID).ToList();
+            var orderIds = _context.Orders.Select(order => order.ID).ToList();
+
+            if (item.Template_id != null && !templateIDs.Contains(item.Template_id))
+            {
+                return BadRequest("This ID doesn't match any of Templates ID!");
+            }
+            if (item.Orders_id != null && !orderIds.Contains(item.Orders_id))
+            {
+                return BadRequest("This ID doesn't match any of Orders ID!");
+            }
+
+            //Quantity Regex
+            string quantityPattern = @"^\d+$";
+            if (!Regex.IsMatch(item.Quantity.ToString(), quantityPattern))
+            {
+                return BadRequest("Quantity added is in wrong format!");
+            }
+
+            //Price of Item Regex
+            string priceOfItemPattern = @"^\d*\.?\d+$";
+            if (!Regex.IsMatch(item.Price_of_Item.ToString(), priceOfItemPattern))
+            {
+                return BadRequest("Price of Item added is in wrong format!");
+            }
+
+            return null;
+        }
+
     }
 }

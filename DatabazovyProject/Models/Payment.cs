@@ -12,8 +12,6 @@ namespace DatabazovyProjekt
     /// </summary>
     public class Payment
     {
-       // public List<Objednavka> objednavky;
-
         public int ID { get; set; }
         public int? Credit_Card_id { get; set; }
         public int? Bank_Transfer_id { get; set; }
@@ -45,7 +43,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the payment's ID, associated credit card and bank transfer IDs, and description.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Card(id): {Credit_Card_id} | Bank Transfer(id): {Bank_Transfer_id}  | Desc.: {Description}";
+            return $"{{\r\n  \"id\": {ID},\r\n  \"credit_Card_id\": {Credit_Card_id},\r\n  \"bank_Transfer_id\": {Bank_Transfer_id},\r\n  \"description\": \"{Description}\"\r\n}}";
         }
     }
 }

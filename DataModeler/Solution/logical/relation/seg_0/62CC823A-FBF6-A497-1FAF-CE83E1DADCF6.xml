@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Item" directorySegmentName="seg_0" id="62CC823A-FBF6-A497-1FAF-CE83E1DADCF6">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:13:24 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>0B0AFDF0-5F6B-7FCC-BB47-730FC7151B3E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A0785D75-C9C1-6F98-BB4C-EB190B426CA1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="Template ID" id="99AAD6AD-E96D-A05C-CFFD-0AAA6C2F9D62">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:16:32 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+<attribute name="Order ID" id="C7D45434-6964-E398-F0C7-54111FA4DB24">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:16:32 UTC</createdTime>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+<attribute name="Quantity" id="AD1DD9FF-DFCC-EF4F-A79F-3F44B5B734DC">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:16:32 UTC</createdTime>
+<generatorID>ACFB1684-2218-9DEA-758B-D6CCFACF511D</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+<attribute name="Price of Item" id="D1986D6C-BE6E-FF0F-7068-484E154A19EB">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:16:32 UTC</createdTime>
+<generatorID>35AF74F3-3698-53B6-D5D1-6B49DC8665FB</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<engineerTo>
+<item key="76C1B1A3-8678-7DCF-605A-EFBF1CF6FD27" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

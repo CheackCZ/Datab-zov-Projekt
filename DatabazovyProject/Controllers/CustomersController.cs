@@ -1,8 +1,10 @@
 ﻿using DatabazovyProject.Data;
 using DatabazovyProjekt;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace DatabazovyProject.Controllers
 {
@@ -52,10 +54,28 @@ namespace DatabazovyProject.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Customer>>> AddCustomer([FromBody] Customer customer)
         {
+            //ID specification condition
+            if (customer.ID == 0)
+                return BadRequest("You have to specify the customer's ID!");
+
+            //Checking for ID usage
+            var customers = _context.Customers.ToList();
+            foreach (Customer cust in customers)
+            {
+                if (cust.ID == customer.ID)
+                    return BadRequest("This ID is already in use!\n -> Use differrent ID.");
+            }
+
+            var result = ValidateCustomer(customer);
+            if (result != null)
+            {
+                return result;
+            }
+
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Customers.ToListAsync());
+            return Ok($"Customer ({customer.ID}) added successfully:\n" + customer);
         }
 
         /// <summary>
@@ -65,6 +85,12 @@ namespace DatabazovyProject.Controllers
         [HttpPut]
         public async Task<ActionResult<List<Customer>>> UpdateCustomer(Customer updatedCustomer)
         {
+            var result = ValidateCustomer(updatedCustomer);
+            if (result != null)
+            {
+                return result;
+            }
+
             var dbCustomer = await _context.Customers.FindAsync(updatedCustomer.ID);
             if (dbCustomer == null)
                 return NotFound("Customer Not Found!");
@@ -77,7 +103,7 @@ namespace DatabazovyProject.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Customers.ToListAsync());
+            return Ok($"Customer ({dbCustomer.ID}) updated successfully:\n" + updatedCustomer);
         }
 
         /// <summary>
@@ -94,7 +120,60 @@ namespace DatabazovyProject.Controllers
             _context.Customers.Remove(dbCustomer);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Customers.ToListAsync());
+            return Ok($"Customer ({dbCustomer.ID}) deleted successfully:\n" + dbCustomer);
+        }
+
+        /// <summary>
+        /// Validates a customer entity.
+        /// </summary>
+        /// <param name="customer">The customer entity to be validated.</param>
+        /// <returns>
+        /// An <see cref="ActionResult"/> indicating the result of the validation:
+        /// - <see cref="BadRequestObjectResult"/> with a message if the provided email is already in use by another customer,
+        /// - <see cref="BadRequestObjectResult"/> with a message if the customer's name or last name length exceeds 20 characters,
+        /// - <see cref="BadRequestObjectResult"/> with a message if the customer's email length exceeds 30 characters,
+        /// - <see cref="BadRequestObjectResult"/> with a message if the customer's phone length exceeds 12 characters,
+        /// - <see cref="BadRequestObjectResult"/> with a message if the customer's password length exceeds 60 characters,
+        /// - <see langword="null"/> if the customer entity is valid.
+        /// </returns>
+        private ActionResult ValidateCustomer(Customer customer)
+        {
+            var customers = _context.Customers.ToList();
+            foreach (Customer cust in customers)
+            {
+                if (customer.Email == cust.Email)
+                    if (customer.ID != cust.ID)
+                        return BadRequest("This email is already in use!\n -> Use differrent Email.");
+            }
+
+            //Name / Last Name Regex
+            string namePattern = @"^[a-zěščřžýáíéůA-ZĚŠČŘŽÝÁÍÉ]{1,20}$";
+            if ((!Regex.IsMatch(customer.Name, namePattern)) || ((!Regex.IsMatch(customer.LastName, namePattern))))
+            {
+                return BadRequest("Customer's name / last name can have maximum length of 20 characters and can only contain Alphabetical characters!");
+            }
+
+            //Email Regex
+            string emailPattern = @"^(?=.{1,30}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(customer.Email, emailPattern))
+            {
+                return BadRequest("Customer's email can have maximum length of 30 characters and has to be in a special format!");
+            }
+
+            //Phone Regex
+            string phonePattern = @"^\d{9,12}$";
+            if (!Regex.IsMatch(customer.Phone, phonePattern))
+            {
+                return BadRequest("Customer's phone can have maximum length of 12 characters and minimmum of 9!");
+            }
+
+            //Password Regex
+            string passwordPattern = @"^.{1,60}$";
+            if (!Regex.IsMatch(customer.Password, passwordPattern))
+            {
+                return BadRequest("Customer's password can have maximum length of 60 characters and can use any character!");
+            }
+            return null;
         }
     }
 }

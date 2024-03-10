@@ -13,7 +13,7 @@ namespace DatabazovyProjekt
     public class Item
     {
         public int ID { get; set; }
-        public int Order_id { get; set; }
+        public int Orders_id { get; set; }
         public int Template_id { get; set; }
 
         public int Quantity { get; set; }
@@ -30,7 +30,7 @@ namespace DatabazovyProjekt
         public Item(int id, int order_id, int template_id, int quantity, double priceOfItem)
         {
             ID = id;
-            Order_id = order_id;
+            Orders_id = order_id;
             Template_id = template_id;
             Quantity = quantity;
             Price_of_Item = priceOfItem;
@@ -47,7 +47,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the item's ID, associated order and template IDs, quantity, and price per item.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Objednavka & id: {Order_id} | Template & id: {Template_id} | Quantity: {Quantity} | Price/item: ${Price_of_Item}";
+            return $"{{\r\n  \"id\": {ID},\r\n  \"order_id\": {Orders_id},\r\n  \"template_id\": {Template_id},\r\n  \"quantity\": {Quantity},\r\n  \"price_of_Item\": {Price_of_Item}\r\n}}";
         }
     }
 }

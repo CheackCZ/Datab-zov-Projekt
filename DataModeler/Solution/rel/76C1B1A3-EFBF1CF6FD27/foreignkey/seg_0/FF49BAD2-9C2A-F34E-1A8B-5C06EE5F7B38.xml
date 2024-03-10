@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FF49BAD2-9C2A-F34E-1A8B-5C06EE5F7B38" containerWithKeyObject="A3BB5B30-4D93-96B7-392E-CB585DA6442A" localFKIndex="2C06ED95-2DF0-2376-465C-D78F350FF63C" name="Template_Typ_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FF49BAD2-9C2A-F34E-1A8B-5C06EE5F7B38" containerWithKeyObject="A3BB5B30-4D93-96B7-392E-CB585DA6442A" localFKIndex="2C06ED95-2DF0-2376-465C-D78F350FF63C" name="Template_Type_FK">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <generatorID>B638B523-809C-EF94-43BB-BF3F4632F5DD</generatorID>
 <ownerDesignName>Solution</ownerDesignName>
-<referredTableLongName>Typ</referredTableLongName>
+<referredTableLongName>Type</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>11A02C96-320F-95ED-9437-B0EE5DD06559</referredTableID>
 <keyObject>19142733-A555-E1CF-59FA-31E4A4233E6A</keyObject>

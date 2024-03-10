@@ -1,4 +1,5 @@
 using DatabazovyProject.Data;
+using DatabazovyProjekt;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatabazovyProject
@@ -14,6 +15,14 @@ namespace DatabazovyProject
         /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
+            //Importing JSON data (Author)
+            /*string filePath = "Imports/authors3.json";
+            Author.ImportJSON(filePath);*/
+
+            //Importing XML data (Customer)
+            /*string filePath = "Imports/customers2.xml";
+            Customer.ImportXML(filePath);*/
+
             // Create a new web application builder.
             var builder = WebApplication.CreateBuilder(args);
 

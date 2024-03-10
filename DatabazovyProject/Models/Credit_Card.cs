@@ -14,8 +14,6 @@ namespace DatabazovyProjekt
     /// </summary>
     public class Credit_Card
     {
-       // public List<Payment> payments;
-
         public int ID { get; set; }
         public string Card_Number { get; set; }
         public DateTime Expiration_date { get; set; }
@@ -47,7 +45,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the credit card's ID, card number, expiration date, and CVV.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Car Number: {Card_Number} | Expiration Date: {Expiration_date} | CVV: {CVV}";
+            return $"{{\r\n  \"id\": {ID},\r\n  \"card_Number\": \"{Card_Number}\",\r\n  \"expiration_date\": \"{Expiration_date}\",\r\n  \"cvv\": \"{CVV}\"\r\n}}";
         }
     }
 }

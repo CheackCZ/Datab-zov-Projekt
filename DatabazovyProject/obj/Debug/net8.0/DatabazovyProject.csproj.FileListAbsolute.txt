@@ -140,3 +140,7 @@ C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybaven�
 C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\Imports\authors.json
+C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\Imports\authors2.json
+C:\Users\ondra\Dropbox\Střední škola\3. Ročník\PV - Počítačové vybavení\DatabazovyProject\DatabazovyProject\bin\Debug\net8.0\Imports\authors3.json

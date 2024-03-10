@@ -11,12 +11,11 @@ namespace DatabazovyProjekt
     /// </summary>
     public class Template
     {
-        //public List<Item> Items;
         public int ID { get; set; }
         
         public int Author_id { get; set; }
         
-        public int Type_id { get; set; }
+        public int Typ_id { get; set; }
 
         public string Name { get; set; }
         public bool Priced { get; set; }
@@ -35,7 +34,7 @@ namespace DatabazovyProjekt
         {
             ID = iD;
             Author_id = author_id;
-            Type_id = type_id;
+            Typ_id = type_id;
             Name = name;
             Priced = priced;
             Price = price;
@@ -52,7 +51,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the template's ID, associated author and type IDs, name, and price.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Author & id: {Author_id} | Type & id: {Type_id} | {Name} | Price: ${Price}";
+            return $"{{\r\n    \"id\": {ID},\r\n    \"author_id\": {Author_id},\r\n    \"type_id\": {Typ_id},\r\n    \"name\": \"{Name}\",\r\n    \"priced\": {Priced},\r\n    \"price\": {Price}\r\n  }}";
         } 
     }
 }

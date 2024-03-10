@@ -51,7 +51,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the order's ID, associated payment and customer IDs, order number, price, and date.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Payment & id: {Payment_id} | Customer & id: {Customer_id} | Ord.Number: {Order_number} | Ord.Price: ${Order_price} | Date: {Date}";
+            return $"{{\r\n    \"id\": {ID},\r\n    \"payment_id\": {Payment_id},\r\n    \"customer_id\": {Customer_id},\r\n    \"order_number\": {Order_number},\r\n    \"order_price\": {Order_price},\r\n    \"date\": \"{Date}\"\r\n  }}";
         }
     }
 }

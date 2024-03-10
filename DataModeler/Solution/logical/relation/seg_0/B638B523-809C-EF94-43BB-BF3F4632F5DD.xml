@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Template Typ FK" directorySegmentName="seg_0" id="B638B523-809C-EF94-43BB-BF3F4632F5DD">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Template Type FK" directorySegmentName="seg_0" id="B638B523-809C-EF94-43BB-BF3F4632F5DD">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:25 UTC</createdTime>
 <ownerDesignName>Solution</ownerDesignName>

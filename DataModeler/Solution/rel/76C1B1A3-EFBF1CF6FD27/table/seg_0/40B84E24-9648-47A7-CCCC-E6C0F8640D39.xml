@@ -69,7 +69,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="AC513B74-D08C-C7C4-78BC-9FC9FF5CB099" name="Author_PKv2">
+<ind_PK_UK id="AC513B74-D08C-C7C4-78BC-9FC9FF5CB099" name="Author_PK">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <ownerDesignName>Solution</ownerDesignName>

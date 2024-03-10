@@ -12,8 +12,6 @@ namespace DatabazovyProjekt
     /// </summary>
     public class Type
     {
-        //public List<Template> templates { get; set; }
-
         public int ID {  get; set; }
         public string Nazev { get; set; }
 
@@ -34,7 +32,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the type's ID and name.</returns>
         public override string? ToString()
         {
-            return $"{ID} | {Nazev}";
+            return $"  {{\r\n    \"id\": {ID},\r\n    \"nazev\": \"{Nazev}\"\r\n  }}";
         }
     }
 }

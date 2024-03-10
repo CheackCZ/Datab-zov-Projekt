@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Type = DatabazovyProjekt.Type;
 
 namespace DatabazovyProject.Controllers
 {
@@ -53,10 +54,26 @@ namespace DatabazovyProject.Controllers
         [HttpPost]
         public async Task<ActionResult<List<DatabazovyProjekt.Type>>> AddTyp([FromBody] DatabazovyProjekt.Type typ)
         {
+            //ID specification condition
+            if (typ.ID == 0)
+                return BadRequest("You have to specify the type's ID!");
+
+            //Checking for ID usage
+            var types = _context.Types.ToList();
+            foreach (Type type in types)
+            {
+                if (type.ID == typ.ID)
+                    return BadRequest("This ID is already in use!\n -> Use differrent ID.");
+            }
+
+            var result = ValidateType(typ);
+            if (result != null)
+                return result;
+
             _context.Types.Add(typ);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Types.ToListAsync());
+            return Ok($"Type ({typ.ID}) added successfully:\n" + typ);
         }
 
         /// <summary>
@@ -68,12 +85,17 @@ namespace DatabazovyProject.Controllers
         {
             var dbTyp = await _context.Types.FindAsync(updatedTyp.ID);
             if (dbTyp == null)
-                return NotFound("Typ Not Found!");
+                return NotFound("Type Not Found!");
+
+            var result = ValidateType(updatedTyp);
+            if (result != null)
+                return result;
+
 
             dbTyp.Nazev = updatedTyp.Nazev;
 
             await _context.SaveChangesAsync();
-            return Ok(await _context.Types.ToListAsync());
+            return Ok($"Type ({dbTyp.ID}) updated successfully:\n" + dbTyp);
         }
 
         /// <summary>
@@ -90,7 +112,27 @@ namespace DatabazovyProject.Controllers
             _context.Types.Remove(dbTyp);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Types.ToListAsync());
+            return Ok($"Type ({dbTyp.ID}) deleted successfully:\n" + dbTyp);
+        }
+
+        /// <summary>
+        /// Validates the provided type object to ensure it meets certain criteria.
+        /// </summary>
+        /// <param name="type">The type object to validate.</param>
+        /// <returns>
+        /// An <see cref="ActionResult"/> indicating success or failure of the validation.
+        /// Returns <c>null</c> if the type object is valid; otherwise, returns a <see cref="BadRequestResult"/>
+        /// with an appropriate error message.
+        /// </returns>
+        private ActionResult ValidateType(Type type)
+        {
+            var types = _context.Types.ToList();
+
+            if (type.Nazev.Length > 20)
+            {
+                return BadRequest("Name can have maximum length of 20 characters!");
+            }
+            return null;
         }
     }
 }

@@ -1,0 +1,26 @@
+<customers>
+	<customer>
+		<Id>1</Id>
+		<Name>Michael</Name>
+		<LastName>Johnson</LastName>
+		<Email>michael.johnson@example.com</Email>
+		<Phone>1234567890</Phone>
+		<Password>pass123</Password>
+	</customer>
+	<customer>
+		<Id>2</Id>
+		<Name>Sarah</Name>
+		<LastName>Williams</LastName>
+		<Email>sarah.williams@example.com</Email>
+		<Phone>9876543210</Phone>
+		<Password>password456</Password>
+	</customer>
+	<customer>
+		<Id>3</Id>
+		<Name>David</Name>
+		<LastName>Miller</LastName>
+		<Email>david.miller@example.com</Email>
+		<Phone>5551234567</Phone>
+		<Password>securepass</Password>
+	</customer>
+</customers>

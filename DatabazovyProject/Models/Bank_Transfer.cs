@@ -11,8 +11,6 @@ namespace DatabazovyProjekt
     /// </summary>
     public class Bank_Transfer
     {
-        // public List<Payment> payments;
-
         public int ID { get; set; }
         public string Variable_Symbol { get; set; }
         public string IBAN { get; set; }
@@ -36,7 +34,7 @@ namespace DatabazovyProjekt
         /// <returns>A string containing the bank transfer's ID, variable symbol, and IBAN.</returns>
         public override string? ToString()
         {
-            return $"{ID} | Var. Symbol: {Variable_Symbol} | IBAN: {IBAN} ";
+            return $"{{\r\n  \"id\": {ID},\r\n  \"variable_Symbol\": \"{Variable_Symbol}\",\r\n  \"iban\": \"{IBAN}\"\r\n}}";
         }
     }
 }

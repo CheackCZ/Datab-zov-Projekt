@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DatabazovyProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ea2b435fc42ce9595ef9413208aaa07204e4066")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+007665bc7a2b827b0a8980b8d7d6c29c5a856cb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DatabazovyProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DatabazovyProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

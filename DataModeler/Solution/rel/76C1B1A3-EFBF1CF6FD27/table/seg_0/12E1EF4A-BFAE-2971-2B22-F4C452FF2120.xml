@@ -80,6 +80,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Customer_User_ID" id="04A5BD1B-62B8-7D77-F560-D713767BC8E9">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:13:39 UTC</createdTime>
+<generatorID>29F62B22-FF3D-89D1-6C5F-0AF5622ED1A4</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="F7D43B4D-B792-0ECC-F5AD-B6065B0067C6" name="Objednavka_PK">
@@ -92,7 +103,7 @@
 <colUsage columnID="596C23FD-30DA-5C5D-FB52-2098861E480E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="58040756-1F49-74D6-08C6-30DAC4C9C990" name="Objednavka_Payment_FK">
+<ind_PK_UK id="58040756-1F49-74D6-08C6-30DAC4C9C990" name="Order_Payment_FK">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <generatorID>D38C2A94-3ACF-B55B-81C4-C72692EFEDAE</generatorID>
@@ -103,7 +114,7 @@
 <colUsage columnID="9F702DE2-6B0B-34D1-D716-83B1A317889F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D37DA6FA-27B7-3E24-5C84-AB5BC2AC6217" name="Objednavka_Customer_FK">
+<ind_PK_UK id="D37DA6FA-27B7-3E24-5C84-AB5BC2AC6217" name="Order_Customer_FK">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <generatorID>469E1513-C771-4FB9-B6FD-FDD6725C07A6</generatorID>

@@ -82,6 +82,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Author_User_ID" id="96E0E81F-7321-3697-0D47-F53EAB7931CE">
+<createdBy>ondra</createdBy>
+<createdTime>2024-03-10 07:13:39 UTC</createdTime>
+<generatorID>E669E781-62F8-FBAA-6662-9C2FDFA095DD</generatorID>
+<ownerDesignName>Solution</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="45F6BFFC-C3F7-DE47-2C5D-45D4803AB8C2" name="Template_PK">
@@ -94,7 +105,7 @@
 <colUsage columnID="0F335EB9-395E-E490-62DD-BEB965094148"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2C06ED95-2DF0-2376-465C-D78F350FF63C" name="Template_Typ_FK">
+<ind_PK_UK id="2C06ED95-2DF0-2376-465C-D78F350FF63C" name="Template_Type_FK">
 <createdBy>ondra</createdBy>
 <createdTime>2024-03-06 15:43:49 UTC</createdTime>
 <generatorID>B638B523-809C-EF94-43BB-BF3F4632F5DD</generatorID>

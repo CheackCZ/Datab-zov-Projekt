@@ -3,6 +3,7 @@ using DatabazovyProjekt;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace DatabazovyProject.Controllers
 {
@@ -52,10 +53,28 @@ namespace DatabazovyProject.Controllers
         [HttpPost]
         public async Task<ActionResult<List<Order>>> AddOrder([FromBody] Order order)
         {
+            //ID specification condition
+            if (order.ID == 0)
+                return BadRequest("You have to specify the order's ID!");
+
+            //Checking for ID usage
+            var orders = _context.Orders.ToList();
+            foreach (Order ord in orders)
+            {
+                if (order.ID == ord.ID)
+                    return BadRequest("This ID is already in use!\n -> Use differrent ID.");
+            }
+
+            var result = ValidateOrder(order);
+            if (result != null)
+            {
+                return result;
+            }
+
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Orders.ToListAsync());
+            return Ok($"Order ({order.ID}) added successfully:\n" + order);
         }
 
         /// <summary>
@@ -69,6 +88,12 @@ namespace DatabazovyProject.Controllers
             if (dbOrder == null)
                 return NotFound("Order Not Found!");
 
+            var result = ValidateOrder(updatedOrder);
+            if (result != null)
+            {
+                return result;
+            }
+
             dbOrder.Payment_id = updatedOrder.Payment_id;
             dbOrder.Customer_id = updatedOrder.Customer_id;
             dbOrder.Order_number = updatedOrder.Order_number;
@@ -77,7 +102,7 @@ namespace DatabazovyProject.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Orders.ToListAsync());
+            return Ok($"Order ({dbOrder.ID}) updated successfully:\n" + updatedOrder);
         }
 
         /// <summary>
@@ -94,7 +119,53 @@ namespace DatabazovyProject.Controllers
             _context.Orders.Remove(dbOrder);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Orders.ToListAsync());
+            return Ok($"Order ({dbOrder.ID}) deleted successfully:\n" + dbOrder);
+        }
+
+        /// <summary>
+        /// Validates an order entity.
+        /// </summary>
+        /// <param name="order">The order entity to be validated.</param>
+        /// <returns>
+        /// An <see cref="ActionResult"/> indicating the result of the validation:
+        /// - <see cref="BadRequestObjectResult"/> with a message if the provided order number is already in use by another order,
+        /// - <see cref="BadRequestObjectResult"/> with a message if the provided payment ID or customer ID does not exist in the database,
+        /// - <see langword="null"/> if the order entity is valid.
+        /// </returns>
+        private ActionResult ValidateOrder(Order order)
+        {
+            //Controls PK
+            var orders = _context.Orders.ToList();
+
+            foreach (Order ord in orders)
+            {
+                if (ord.Order_number == order.Order_number)
+                {
+                    if (order.ID != ord.ID)
+                        return BadRequest("This order number is already in use!\n -> Use differrent one.");
+                }
+            }
+
+            //Checks the FK exists
+            var paymentsIds = _context.Payments.Select(payment => payment.ID).ToList();
+            var customerIds = _context.Customers.Select(customer => customer.ID).ToList();
+
+            if (order.Payment_id != null && !paymentsIds.Contains(order.Payment_id))
+            {
+                return BadRequest("This ID doesn't match any of Payments ID!");
+            }
+            if (order.Customer_id != null && !customerIds.Contains(order.Customer_id))
+            {
+                return BadRequest("This ID doesn't match any of Customers ID!");
+            }
+
+            //Order Price Regex
+            string pricePattern = @"^\d*\.?\d+$";
+            if (!Regex.IsMatch(order.Order_number.ToString(), pricePattern))
+            {
+                return BadRequest("Price added is in wrong format!");
+            }
+            return null;
         }
     }   
 }
