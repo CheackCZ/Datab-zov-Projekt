@@ -86,4 +86,4 @@ API obsahuje dokumentaci pro programátory, která popisuje strukturu, funkce a 
 
 Součástí je také tento soubor README s informacemi o použití a instalaci API.
 
-Práce je také na githubu, pod tímto odkazem: 
+Práce je také na githubu, pod tímto odkazem: https://github.com/CheackCZ/DatabazovyProjekt
